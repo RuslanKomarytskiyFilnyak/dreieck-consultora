@@ -72,7 +72,10 @@ export function HeroSection() {
           >
             <motion.h1
               className="text-4xl sm:text-5xl lg:text-7xl text-white uppercase tracking-[0.1em] sm:tracking-[0.15em] mb-4 sm:mb-6 drop-shadow-xl leading-tight"
-              style={{ fontWeight: 300, textShadow: '0 4px 8px rgba(0,0,0,0.4)' }}
+              style={{ 
+                fontWeight: 300, 
+                textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4)' 
+              }}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
@@ -80,6 +83,9 @@ export function HeroSection() {
               Transformamos
               <motion.span
                 className="block text-yellow-400 mt-1 sm:mt-2 text-3xl sm:text-4xl lg:text-5xl tracking-[0.05em] sm:tracking-[0.1em] leading-snug"
+                style={{ 
+                  textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4)' 
+                }}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
@@ -92,7 +98,10 @@ export function HeroSection() {
           {/* Animated Subtitle */}
           <motion.p
             className="text-xl sm:text-2xl text-white tracking-[0.1em] uppercase drop-shadow-lg"
-            style={{ fontWeight: 200, textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
+            style={{ 
+              fontWeight: 200, 
+              textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4)' 
+            }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
@@ -113,7 +122,7 @@ export function HeroSection() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              Comienza Ahora
+              Solicitar Información
               <motion.div
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}

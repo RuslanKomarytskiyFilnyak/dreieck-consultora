@@ -145,7 +145,7 @@ export function ContactSection() {
             viewport={{ once: true }}
           >
             ¿Estás listo para transformar tus datos en decisiones estratégicas?
-            Hablemos sobre cómo podemos ayudar a tu empresa.
+            Descubrí como podemos ayudarte.
           </motion.p>
         </motion.div>
 
@@ -325,7 +325,7 @@ export function ContactSection() {
                     Síguenos en redes
                 </h4>
                 <div className="space-y-4">
-                    <p className="text-sm text-gray-600">Conecta con nuestro equipo:</p>
+                    <p className="text-sm text-gray-600">Conoce a nuestro equipo:</p>
                     <div className="flex flex-wrap gap-3">
                         {socialLinks.filter(social => social.icon === Linkedin).map((social, i) => (
                             <motion.a
@@ -333,7 +333,7 @@ export function ContactSection() {
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-2 bg-gray-200 rounded-lg hover:bg-yellow-500 hover:text-gray-900 transition-colors text-sm"
+                                className="flex items-center gap-2 px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-500 hover:text-gray-900 transition-colors text-sm text-yellow-600 font-medium border-2 border-yellow-600"
                                 aria-label={`LinkedIn de ${social.label}`}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -341,7 +341,7 @@ export function ContactSection() {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.1 * i }}
                             >
-                                <Linkedin size={16} />
+                                <Linkedin size={16} className="text-yellow-600" />
                                 <span>{social.label.split(' ')[0]}</span>
                             </motion.a>
                         ))}

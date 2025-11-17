@@ -23,7 +23,7 @@ export function AboutSection() {
       id="sobre-mi"
       ref={sectionRef}
       // Se añade text-center para centrar todo el contenido
-      className="py-32 bg-white relative overflow-hidden text-center"
+      className="py-20 bg-white relative overflow-hidden text-center"
     >
       {/* Se elimina: AnimatedDataGrid, FloatingMetrics y los elementos de fondo parallax */}
 
@@ -65,6 +65,13 @@ export function AboutSection() {
                 Creemos en el valor de la información, la eficiencia de los procesos y el aprendizaje continuo como
                  pilares para el crecimiento empresarial.
             </p>
+
+            {/* Logo/Icono inferior */}
+            <div
+              className="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 rounded-lg mt-6 mx-auto"
+            >
+              <Target className="text-yellow-600" size={32} />
+            </div>
           </div>
 
           {/* ELIMINADO: La sección de las cuatro tarjetas de características (Formación Especializada, etc.) */}

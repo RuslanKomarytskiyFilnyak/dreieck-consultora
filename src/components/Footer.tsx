@@ -93,7 +93,7 @@ export function Footer() {
                 dreieck.c@gmail.com
               </a>
               <div className="space-y-4 pt-4">
-                <p className="text-sm text-gray-400">Conecta con nuestro equipo:</p>
+                <p className="text-sm text-gray-400">Conoce a nuestro equipo:</p>
                 <div className="flex flex-wrap gap-3">
                   {[
                     { 
@@ -119,7 +119,7 @@ export function Footer() {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-lg hover:bg-yellow-500 hover:text-gray-900 transition-colors text-sm"
+                        className="flex items-center gap-2 px-4 py-2 bg-yellow-500/10 rounded-lg hover:bg-yellow-500 hover:text-gray-900 transition-colors text-sm text-yellow-400 font-medium border border-yellow-500/30"
                         aria-label={`LinkedIn de ${social.label}`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -128,7 +128,7 @@ export function Footer() {
                         transition={{ delay: 0.2 + i * 0.1 }}
                         viewport={{ once: true }}
                       >
-                        <Icon size={16} />
+                        <Icon size={16} className="text-yellow-400" />
                         <span>{social.label.split(' ')[0]}</span>
                       </motion.a>
                     );

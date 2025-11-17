@@ -187,3 +187,55 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Hero Text Container - Fondo orgánico difuminado */
+.hero-text-container {
+  /* POSICIONAMIENTO Y DIMENSIONES */
+  display: inline-block;
+  padding: 50px 60px;
+  
+  /* FORMA CREATIVA (BORDES SUAVES Y ORGÁNICOS) */
+  /* Crea una forma de 'nube' asimétrica y suave */
+  border-radius: 60% 40% 70% 30% / 30% 70% 30% 70%;
+  
+  /* EFECTO DIFUMINADO Y TRANSPARENTE (FROSTED GLASS) - MÁS VISIBLE */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.65) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.6),
+    0 4px 16px 0 rgba(0, 0, 0, 0.4),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  
+  /* TRANSICIÓN */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-text-container:hover {
+  border-radius: 40% 60% 30% 70% / 70% 30% 70% 30%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  transform: scale(1.02);
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.7),
+    0 6px 20px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive para móviles */
+@media (max-width: 640px) {
+  .hero-text-container {
+    padding: 35px 40px;
+    border-radius: 50% 40% 60% 50% / 40% 60% 40% 60%;
+  }
+}

@@ -27,7 +27,7 @@ const slideData = [
   },
   // SLIDE 2: ADVENTUREWORK
   {
-    project: "ADVENTUREWORK",
+    project: "Adventurework",
     reference: "Análisis de ventas, costos y rentabilidad, con foco en desempeño financiero y evolución temporal por país y producto.",
     subtitles: "Títulos dashboards seleccionados: 1. Análisis financiero global; 2. Análisis USA; 3. Series temporales.",
     items: [
