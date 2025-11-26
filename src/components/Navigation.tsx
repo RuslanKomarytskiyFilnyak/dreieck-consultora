@@ -3,6 +3,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import logo from "figma:asset/998784cf69b6d8792a6a386cfe77446240c85250.png";
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -44,7 +46,7 @@ export function Navigation() {
               className="flex items-center gap-3 group"
             >
               <motion.img
-                src={`${import.meta.env.BASE_URL}logo-transparente.png`}
+                src={`${BASE_URL}logo-transparente.png`}
                 alt="Dreieck Consultora"
                 className="h-12 w-auto"
                 whileHover={{ scale: 1.05, rotate: 5 }}
