@@ -1,17 +1,25 @@
 
 
-import { Target } from "lucide-react";
+import { Target, Linkedin } from "lucide-react";
 // Se eliminan las importaciones de motion, useScroll, useTransform, Award, Briefcase, GraduationCap
 import { useRef } from "react";
+import { motion } from "motion/react";
 
-// Función de simulación para reemplazar las etiquetas de motion (si se dejaron algunas)
-const motion = {
-  div: (props: React.HTMLAttributes<HTMLDivElement>) => <div {...props} />,
-  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => <h2 {...props} />,
-  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => <p {...props} />,
-};
-
-// Se eliminan las funciones AnimatedDataGrid y FloatingMetrics, ya no son necesarias.
+// Datos de LinkedIn
+const linkedinLinks = [
+  { 
+    href: "https://www.linkedin.com/in/pazcamino/",
+    label: "Paz Camino" 
+  },
+  { 
+    href: "https://www.linkedin.com/in/fernanda-armagno-18512151/",
+    label: "Fernanda Armagno" 
+  },
+  { 
+    href: "https://www.linkedin.com/in/agustina-tauro-84726232/",
+    label: "Agustina Tauro" 
+  },
+];
 
 export function AboutSection() {
   const sectionRef = useRef(null);
@@ -45,6 +53,31 @@ export function AboutSection() {
             <h2 className="mb-6 uppercase tracking-[0.15em] text-3xl font-light">
               Quiénes somos
             </h2>
+            
+            {/* Botones de LinkedIn del equipo */}
+            <div className="mb-8">
+              <p className="text-sm text-gray-600 mb-4">Conoce a nuestro equipo:</p>
+              <div className="flex flex-wrap gap-3 justify-center">
+                {linkedinLinks.map((link, i) => (
+                  <motion.a
+                    key={i}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-500 hover:text-gray-900 transition-colors text-sm text-yellow-600 font-medium border-2 border-yellow-600"
+                    aria-label={`LinkedIn de ${link.label}`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * i }}
+                  >
+                    <Linkedin size={16} className="text-yellow-600" />
+                    <span>{link.label.split(' ')[0]}</span>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
             
             {/* Texto Plano Centrado */}
             <p className="text-gray-600 mb-6 tracking-wide leading-relaxed max-w-2xl mx-auto">

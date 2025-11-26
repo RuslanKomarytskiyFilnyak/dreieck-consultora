@@ -97,9 +97,9 @@ export function HeroSection() {
 
           {/* Animated Subtitle */}
           <motion.p
-            className="text-xl sm:text-2xl text-white tracking-[0.1em] uppercase drop-shadow-lg"
+            className="text-2xl sm:text-3xl text-white tracking-[0.1em] uppercase drop-shadow-lg"
             style={{ 
-              fontWeight: 200, 
+              fontWeight: 500, 
               textShadow: '0 4px 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4)' 
             }}
             initial={{ opacity: 0, y: 30 }}

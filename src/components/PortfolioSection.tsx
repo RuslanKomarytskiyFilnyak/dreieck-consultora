@@ -307,13 +307,48 @@ export function PortfolioSection() {
             />
           </div>
 
-          {/* Contenedor de logos de clientes */}
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mt-12 px-4">
+          {/* Carrusel para móvil */}
+          <div className="block md:hidden px-4">
+            <Swiper
+              modules={[Pagination]}
+              pagination={{ clickable: true }}
+              spaceBetween={20}
+              slidesPerView={1}
+              className="pb-12"
+            >
+              {[
+                "empresas/abasto.jpeg",
+                "empresas/la pacheca.jpeg",
+                "/empresas/rosell.png",
+                "/empresas/bigliardi.png",
+                "/empresas/img1.jpeg",
+                "/empresas/img2.jpeg",
+                "/empresas/img3.jpeg"
+              ].map((logo, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex justify-center items-center h-32 bg-white/5 p-6 rounded-lg">
+                    <img
+                      src={logo}
+                      alt={`Logo cliente ${index + 1}`}
+                      className="h-full w-full object-contain object-center max-h-24"
+                      loading="lazy"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Grid para desktop */}
+          <div className="hidden md:flex flex-wrap justify-center items-center gap-8 md:gap-12 mt-12 px-4">
             {[
               "empresas/abasto.jpeg",
               "empresas/la pacheca.jpeg",
               "/empresas/rosell.png",
-              "/empresas/bigliardi.png"
+              "/empresas/bigliardi.png",
+              "/empresas/img1.jpeg",
+              "/empresas/img2.jpeg",
+              "/empresas/img3.jpeg"
             ].map((logo, index) => (
               <motion.div
                 key={index}

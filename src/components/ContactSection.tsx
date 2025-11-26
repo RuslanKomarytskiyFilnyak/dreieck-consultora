@@ -312,49 +312,13 @@ export function ContactSection() {
                 );
               })}
             </div>
-            
-            {/* Íconos de Redes Sociales */}
-            <motion.div
-                className="pt-4 border-t border-gray-200"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                viewport={{ once: true }}
-            >
-                <h4 className="mb-4 uppercase tracking-wider text-gray-700 text-sm">
-                    Síguenos en redes
-                </h4>
-                <div className="space-y-4">
-                    <p className="text-sm text-gray-600">Conoce a nuestro equipo:</p>
-                    <div className="flex flex-wrap gap-3">
-                        {socialLinks.filter(social => social.icon === Linkedin).map((social, i) => (
-                            <motion.a
-                                key={i}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-2 bg-yellow-100 rounded-lg hover:bg-yellow-500 hover:text-gray-900 transition-colors text-sm text-yellow-600 font-medium border-2 border-yellow-600"
-                                aria-label={`LinkedIn de ${social.label}`}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.1 * i }}
-                            >
-                                <Linkedin size={16} className="text-yellow-600" />
-                                <span>{social.label.split(' ')[0]}</span>
-                            </motion.a>
-                        ))}
-                    </div>
-                </div>
-            </motion.div>
 
-
+            {/* Why Choose DREIECK - Moved inside right column */}
             <motion.div
               className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-xl border border-yellow-200"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 }} // Ajuste del delay
+              transition={{ delay: 0.6 }}
               viewport={{ once: true }}
             >
               <h4 className="mb-4 uppercase tracking-wide">
@@ -372,7 +336,7 @@ export function ContactSection() {
                     className="flex items-start gap-2"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.7 + i * 0.1 }} // Ajuste del delay
+                    transition={{ delay: 0.7 + i * 0.1 }}
                     viewport={{ once: true }}
                   >
                     <span className="text-yellow-600 mt-0.5">▲</span>
