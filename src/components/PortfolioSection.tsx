@@ -12,7 +12,10 @@ import 'swiper/css/pagination';
 // Helper para rutas de imágenes con BASE_URL
 const getImageUrl = (path: string) => {
   const base = import.meta.env.BASE_URL || '/';
-  return `${base}${path.startsWith('/') ? path.slice(1) : path}`;
+  // Si la ruta ya empieza con /, la quitamos para evitar doble barra
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  // Si base ya termina con /, no añadimos otra
+  return base.endsWith('/') ? `${base}${cleanPath}` : `${base}/${cleanPath}`;
 };
 
 // =========================================================================
