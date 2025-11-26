@@ -63,23 +63,23 @@ export function ContactSection() {
     setIsSubmitting(true);
     
     try {
-      // Convertir FormData a un objeto plano
-      const data: Record<string, string> = {};
-      formData.forEach((value, key) => {
-        data[key] = value.toString();
-      });
-      
-      await fetch("/", {
+      const response = await fetch("https://formspree.io/f/xrbwbppa", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(data).toString()
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
       
-      setIsSent(true);
-      form.reset();
-      
-      // Resetear el mensaje de éxito después de 3 segundos
-      setTimeout(() => setIsSent(false), 3000);
+      if (response.ok) {
+        setIsSent(true);
+        form.reset();
+        
+        // Resetear el mensaje de éxito después de 5 segundos
+        setTimeout(() => setIsSent(false), 5000);
+      } else {
+        throw new Error('Error al enviar el formulario');
+      }
     } catch (error) {
       console.error("Error al enviar formulario:", error);
       alert("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
@@ -159,15 +159,12 @@ export function ContactSection() {
             viewport={{ once: true }}
           >
             <form
-              name="contact"
+              action="https://formspree.io/f/xrbwbppa"
               method="POST"
-              data-netlify="true"
               className="space-y-6"
               onSubmit={handleSubmit}
             >
-              <input type="hidden" name="form-name" value="contact" />
-
-              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="_subject" value="Nuevo mensaje desde Dreieck Consultora" />
               
               <div>
                 <label htmlFor="name" className="block mb-2 text-sm font-medium">
