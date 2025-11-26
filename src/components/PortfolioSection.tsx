@@ -9,6 +9,12 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+// Helper para rutas de imágenes con BASE_URL
+const getImageUrl = (path: string) => {
+  const base = import.meta.env.BASE_URL || '/';
+  return `${base}${path.startsWith('/') ? path.slice(1) : path}`;
+};
+
 // =========================================================================
 // 1. DATOS DE PORTAFOLIO AGRUPADOS POR SLIDE (4 SLIDES * 3 FOTOS)
 //    - Contiene los nuevos textos de referencia y proyecto.
@@ -86,7 +92,7 @@ function PortfolioCard({ item, index }: PortfolioCardProps) {
     >
       <div className="w-full h-full overflow-hidden bg-gray-700">
         <img
-          src={item.image}
+          src={getImageUrl(item.image)}
           alt={`Proyecto ${index + 1}`}
           className="w-full h-full object-cover object-center"
           loading="lazy"
@@ -328,7 +334,7 @@ export function PortfolioSection() {
                 <SwiperSlide key={index}>
                   <div className="flex justify-center items-center h-32 bg-white/5 p-6 rounded-lg">
                     <img
-                      src={logo}
+                      src={getImageUrl(logo)}
                       alt={`Logo cliente ${index + 1}`}
                       className="h-full w-full object-contain object-center max-h-24"
                       loading="lazy"
@@ -360,7 +366,7 @@ export function PortfolioSection() {
                 whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
               >
                 <img
-                  src={logo}
+                  src={getImageUrl(logo)}
                   alt={`Logo cliente ${index + 1}`}
                   className="h-full w-full object-contain object-center filter grayscale hover:grayscale-0 transition-all duration-300 max-h-16 md:max-h-20"
                   loading="lazy"
